@@ -1,14 +1,14 @@
 import pygame
 import os
 
-WIDTH, HEIGHT = 900, 500
+WIDTH, HEIGHT = 600, 600
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Space Invaders")
 
 PURPLE = (128, 0, 255)
 
 FPS = 60
-VEL = 5
+VEL = 2
 SPACESHIP_WIDTH, SPACESHIP_HEIGHT = 55, 40
 
 YELLOW_SPACESHIP_IMAGE = pygame.image.load(
@@ -49,8 +49,8 @@ def red_handle_movement(keys_pressed, red):
         red.y += VEL
 
 def main():
-    red = pygame.Rect(700, 300, SPACESHIP_WIDTH, SPACESHIP_HEIGHT)
-    yellow = pygame.Rect(100, 300, SPACESHIP_WIDTH, SPACESHIP_HEIGHT)
+    red = pygame.Rect(WIDTH-SPACESHIP_HEIGHT, HEIGHT/2, SPACESHIP_WIDTH, SPACESHIP_HEIGHT)
+    yellow = pygame.Rect(0, HEIGHT/2, SPACESHIP_WIDTH, SPACESHIP_HEIGHT)
 
     clock = pygame.time.Clock()
     run = True
@@ -68,7 +68,6 @@ def main():
         draw_window(red, yellow)
 
     main()
-
 
 if __name__ == "__main__":
     main()
